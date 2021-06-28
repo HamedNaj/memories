@@ -15,8 +15,6 @@ app.use(bodyParser.urlencoded({limit: '30mb', extended: true}))
 app.use(cors())
 
 
-app.use('/posts', postRoutes)
-app.use('/users', userRoutes)
 const PORT = process.env.PORT || 5000
 mongoose.connect(process.env.CONNECTION_URL
   , {
@@ -32,4 +30,10 @@ mongoose.connect(process.env.CONNECTION_URL
   .catch(err => {
     console.log('error in connecting database ====>>>', err)
   })
+app.use(express.urlencoded());
 app.use(express.static("./client/build"));
+app.use('/posts', postRoutes)
+app.use('/users', userRoutes)
+app.get('*', function (req, res) {
+  res.sendFile('index.html', {root: `./client/build`});
+})
