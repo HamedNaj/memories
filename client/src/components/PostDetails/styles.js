@@ -44,7 +44,9 @@ export default makeStyles((theme) => ({
     margin: '20px',
     cursor: 'pointer',
     minWidth: '200px',
+    maxWidth: '200px',
     [theme.breakpoints.down('sm')]: {
+    maxWidth: 'auto',
       minWidth:'auto',
       width:'200px'
     }

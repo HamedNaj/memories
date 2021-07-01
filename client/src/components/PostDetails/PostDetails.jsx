@@ -23,7 +23,7 @@ const PostDetails = () => {
   }, [post])
 
   const openPost = (_id) => {
-    history.push(`/posts/${_id}`)
+    history.push(`/home/${_id}`)
   }
 
   if (!post) return null

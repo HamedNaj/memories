@@ -48,7 +48,7 @@ export const createPost = (post, history) => async (dispatch) => {
     const {data} = await api.createPost(post)
     dispatch({type: CREATE, payload: data})
     dispatch({type: STOP_LOADING})
-    history.push(`/posts/${data._id}`)
+    history.push(`/home/${data._id}`)
   } catch (e) {
     console.log(e.message)
   }
