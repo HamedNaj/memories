@@ -36,7 +36,6 @@ const Auth = () => {
     setShowPassword(ps => !ps)
   }
   const googleSuccess = async (res) => {
-    console.log('on success ', res)
     const result = res?.profileObj
     const token = res?.tokenId
     try {
@@ -46,8 +45,8 @@ const Auth = () => {
       console.log(e)
     }
   }
-  const googleFailure = () => {
-    console.log('goog;e sign in error ')
+  const googleFailure = (e) => {
+    console.log('google sign in error ', e)
   }
   return (
     <Container component='main' maxWidth={'xs'}>
